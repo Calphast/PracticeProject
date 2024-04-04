@@ -36,7 +36,7 @@ public class PlutoTeleOp extends LinearOpMode {
 
         if (isStopRequested()) return;
 
-        while(opModeIsActive()); { //idk why i need semicolon here
+        while(opModeIsActive()) { //idk why i need semicolon here
             double y = -gamepad1.left_stick_y; 
             double x = gamepad1.left_stick_x;
             double rx = gamepad1.right_stick_x;
