@@ -14,6 +14,8 @@ public class PlutoTeleOp extends LinearOpMode {
 
     @Override
     public void runOpMode() throws InterruptedException{
+
+        // Motor stuff (will be re-written so that its more organized)
         //We get the motors here
         DcMotor frontLeftMotor = hardwareMap.dcMotor.get("frontLeftMotor");
         DcMotor backLeftMotor = hardwareMap.dcMotor.get("backLeftMotor");
