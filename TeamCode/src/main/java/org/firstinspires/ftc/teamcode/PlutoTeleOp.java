@@ -1,4 +1,13 @@
-// ATTEMTION!!! MY JAVA IS MESSED UP SO NO IMPORTS ARE IMPORTED :(
+package org.firstinspires.ftc.teamcode;// ATTEMTION!!! MY JAVA IS MESSED UP SO NO IMPORTS ARE IMPORTED :(
+
+import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
+import com.qualcomm.robotcore.hardware.IMU;
+
+import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 
 @TeleOp
 public class PlutoTeleOp extends LinearOpMode {
@@ -6,10 +15,10 @@ public class PlutoTeleOp extends LinearOpMode {
     @Override
     public void runOpMode() throws InterruptedException{
         //We get the motors here
-        DcMotor frontLeftMotor = hardwareMap.DcMotor.get("frontLeftMotor");
-        DcMotor backLeftMotor = hardwareMap.DcMotor.get("backLeftMotor");
-        DcMotor frontRightMotor = hardwareMap.DcMotor.get("frontRightMotor");
-        DcMotor backRightMotor = hardwareMap.DcMotor.get("backRightMotor");
+        DcMotor frontLeftMotor = hardwareMap.dcMotor.get("frontLeftMotor");
+        DcMotor backLeftMotor = hardwareMap.dcMotor.get("backLeftMotor");
+        DcMotor frontRightMotor = hardwareMap.dcMotor.get("frontRightMotor");
+        DcMotor backRightMotor = hardwareMap.dcMotor.get("backRightMotor");
 
         // Reverses the Right motors bc of some wierd gearbox stuff idk
         frontRightMotor.setDirection(DcMotorSimple.Direction.REVERSE);
@@ -27,7 +36,7 @@ public class PlutoTeleOp extends LinearOpMode {
 
         if (isStopRequested()) return;
 
-        white(opModeIsActive()); { //idk why i need semicolon here
+        while(opModeIsActive()); { //idk why i need semicolon here
             double y = -gamepad1.left_stick_y; 
             double x = gamepad1.left_stick_x;
             double rx = gamepad1.right_stick_x;
